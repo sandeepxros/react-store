@@ -1,0 +1,21 @@
+/* .card-fit{
+    width: 270px;
+    height: 400px;
+    overflow: hidden;
+} */
+.img-fit{
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+.card-text-fit{
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+}
+.text-fit{
+    width: 200px;
+    height: 50px;
+    overflow: hidden;
+     
+}

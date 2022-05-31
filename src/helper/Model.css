@@ -1,0 +1,7 @@
+.modalWrapper {
+    z-index: 1000000;
+  }
+.set{
+  top: -18px; 
+  right: -18px;
+}
