@@ -1,21 +1,8 @@
 import React, { useEffect, useState } from "react";
 import InputField from "./InputField";
 import Selector from "./Selector";
+import {States} from "./States"; 
 export default function InputDetails() {
-  const [countries, setCountry] = useState(null);
-  const [city, setCity] = useState(null); 
-  useEffect(() => {
-    fetch(`https://countriesnow.space/api/v0.1/countries/positions`)
-      .then((res) => res.json())
-      .then((data) => setCountry(data.data))
-      .catch((error) => alert("error buddy: " + error));
-  }, []);
-   useEffect(() => {
-    fetch(`https://countriesnow.space/api/v0.1/countries/population/cities`)
-      .then((res) => res.json())
-      .then((data) => setCity(data.data))
-      .catch((error) => alert("error buddy: " + error));
-  }, countries);
   return (
     <>
       <form>
@@ -23,29 +10,48 @@ export default function InputDetails() {
           <InputField
             css="col-sm-6"
             type="text-field"
-            label="firstName"
-            name="First name"
+            label="Name"
+            name="Name"
           />
           <InputField
             css="col-sm-6"
-            type="text-field"
-            label="lastName"
-            name="Last name"
+            type="tel"
+            label="Mobile No"
+            name="Mobile No"
           />
           <InputField
-            css="col-12"
+            css="col-md-6"
             type="text-field"
             label="address"
             name="Address"
           />
           <InputField
-            css="col-12"
+            css="col-md-6"
             type="text-field"
             label="address"
             name="Address Line 2"
           />
-          <Selector countries={countries}/>
+          <Selector data={States}/>
+          <InputField
+            css="col-md-2"
+            type="text"
+            label="pincode"
+            name="Pincode"
+          />
+          <InputField
+            css="col-md-2"
+            type="text"
+            label="Landmark"
+            name="Landmark"
+          />
+            <InputField
+            css="col-md-2 mb-3"
+            type="text"
+            label="alternate"
+            name="Alternate No"
+          />
         </div>
+        <button className="btn btn-dark">Save & Deliver</button> 
       </form>
     </>
   );

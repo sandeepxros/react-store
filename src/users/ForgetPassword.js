@@ -2,18 +2,13 @@ import {ImLeaf} from "react-icons/im"
 import Popup from "../helper/Popup";
 import {useState} from "react"; 
 import {Link} from "react-router-dom";
-import useFetch from "../helper/useFetch";
-export default function SignUp() {
+export default function ForgetPassword() {
     const [popup, setpopup] = useState(false); 
-    const [response, loading, hasError] = useFetch("http://localhost:5000/user"); 
-    console.log(response);
-    console.log(loading); 
-    console.log(hasError);
   return (
       <>
     <div className="card">
       <h5 class="card-header text-center">
-        Create Your Account with Leaf
+        Reset Your Password
         <span>
           <ImLeaf color="green" />
         </span>
@@ -43,21 +38,8 @@ export default function SignUp() {
           </div>
           </div>
           <div className="mb-3">
-            <label htmlFor="otp" className="form-label">
-              OTP
-            </label>
-            <input
-              type="password"
-              id="otp"
-              className="form-control"
-              required
-              disabled
-            />
-          </div>
-        
-          <div className="mb-3">
             <label htmlFor="password" className="form-label">
-              Password
+              OTP
             </label>
             <input
               type="password"
@@ -82,7 +64,7 @@ export default function SignUp() {
             Login
           </button>
           <small>
-            Already have an account?<Link to="/user">click here</Link>
+            Don't have an account?<Link to="/signup">click here</Link>
           </small>
         </form>
       </div>

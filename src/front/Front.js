@@ -3,6 +3,7 @@ import "./css/Front.css";
 import Catlog from "./Catlog";
 import Carousel from "./Carousel";
 import Selector from "../checkout/Selector";
+import Footer from "../footer/Footer";
 export default function Front() {
   return (
     <>
@@ -10,8 +11,8 @@ export default function Front() {
       <Carousel/>
       <div className="container">
         <Catlog />
-        <Selector/>
       </div>
+      <Footer/>
     </>
   );
 }

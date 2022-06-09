@@ -8,7 +8,6 @@ export default class Product extends React.Component {
     this.state = {
       products: [],
     };
-    console.log(this.state.products.length == 0);
   }
   async componentDidMount() {
     await axios.get("https://fakestoreapi.com/products").then((res) => {
@@ -16,17 +15,21 @@ export default class Product extends React.Component {
       this.setState({ products });
     });
   }
+  componentWillUnmount(){
+    for(let x in this.state.products)
+    localStorage.setItem(x, JSON.stringify(this.state.products[x]));
+  }
 
   render() {
     return (
       <>
-        {this.state.products.length == 0 ? (
+        {this.state.products.length === 0 ? (
           <Loading />
         ) : (
           <div className="row py-3">
             {this.state.products.map((product) => (
               <div
-                className="col-md-3 my-3 d-flex align-items-center justify-content-center"
+                className="col-md-3 col-6 my-3 d-flex align-items-center justify-content-center"
                 key={product.id}
               >
                 <Card

@@ -10,12 +10,15 @@
 }
 .card-text-fit{
     width: 200px;
-    height: 150px;
+    height: 50px;
     overflow: hidden;
 }
 .text-fit{
-    width: 200px;
-    height: 50px;
-    overflow: hidden;
-     
+   color: #212529d5; 
+   text-decoration: none;
+   font-weight: 700;
+}
+.text-fit:hover{
+    color: black; 
+   
 }

@@ -1,7 +1,17 @@
 .modalWrapper {
-    z-index: 1000000;
-  }
-.set{
-  top: -18px; 
+  z-index: 1000000;
+  /* background-color: rgba(0, 0, 0, 0.458); */
+  background: rgba( 0, 0, 0, 0.65 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 20px );
+-webkit-backdrop-filter: blur( 20px );
+ 
+ 
+  
+
+}
+
+.set {
+  top: -18px;
   right: -18px;
 }

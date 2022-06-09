@@ -3,7 +3,7 @@ import { Link} from "react-router-dom";
 export default function Card(props) {
   return (
     
-    <div className="card card-fit p-3">
+    <div className="card card-fit p-3 overflow-hidden">
       <div className="img-fit text-center">
       <img
         src={props.imgsrc}
@@ -14,8 +14,7 @@ export default function Card(props) {
       </div>
       <div className="card-text-fit m-0 ">
       <div className="card-body ">
-        <p className="card-text text-fit small"><b>{props.title}</b></p>
-        <Link to={"/product/"+props.all.id} className="btn btn-success">Check Out</Link>
+        <Link to={"/product/"+props.all.id} className="card-text text-fit small">{props.title}</Link>
       </div>
     </div>
     </div>

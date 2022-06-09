@@ -1,59 +1,60 @@
 import "./css/Navbar.css";
-import { FaRegUser } from "react-icons/fa";
-import { FiShoppingCart } from "react-icons/fi";
+import {BsFillPersonFill, BsFillCartFill,BsFillHeartFill} from "react-icons/bs"; 
 import { ImLeaf } from "react-icons/im";
-import { Link } from "react-router-dom";
-import Modal from "../helper/Modal";
+import { Link} from "react-router-dom";
 import { useState } from "react";
 import Login from "../users/Login";
+import ForgetPassword from "../users/ForgetPassword";
+import { NavItems } from "../helper/Navigation";
+const style = {
+  background: "#78ffd6",
+  background: "-webkit-linear-gradient(to left, #78ffd6, #a8ff78)",
+  background: "linear-gradient(to left, #78ffd6, #a8ff78)",
+};
 export default function Navbar() {
-  const [show, setShow] = useState(false); 
-  console.log(show);
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg sticky-top glass">
+      <nav className="navbar navbar-expand-lg sticky-top navbar-light bg-light">
         <div className="container d-flex flex-inline">
           <Link className="navbar-brand d-flex flex-inline " to="/">
-            Leaf{" "}
             <span>
-              <ImLeaf color="green" size={"1.5em"} />
+              <ImLeaf color="#e45574" size={"1.5em"} />
             </span>
           </Link>
           <form className="d-flex w-50 mx-auto my-auto  " role="search">
-            <div className="input-group">
-              <input
-                className="form-control "
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-success input-group-text" type="submit">
-                Search
-              </button>
-            </div>
+            <input
+              className="form-control search "
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
           </form>
           <ul className="nav">
-            <li className="nav-item mx-4" onClick={()=>setShow(preSte=>!preSte)}>
-              <FaRegUser
-                size={"1.2em"}
-                color="green"
-                style={{ cursor: "pointer" }}
-              />
-            </li>
-           
-            <li className="nav-item">
-              <FiShoppingCart
+            <NavItems where="/user">
+              <BsFillPersonFill
                 size="1.2em"
-                color="green"
+                color="#e45574"
                 style={{ cursor: "pointer" }}
               />
-            </li>
+            </NavItems>
+            <NavItems where="/">
+              <BsFillCartFill
+                size="1.2em"
+                color="#e45574"
+                style={{ cursor: "pointer" }}
+              />
+            </NavItems>
+            <NavItems where="/">
+              <BsFillHeartFill
+                size="1.2em"
+                color="#e45574"
+                style={{ cursor: "pointer" }}
+              />
+            </NavItems>
           </ul>
         </div>
       </nav>
-      <Modal show={show} onClose={()=>setShow(preSte=>!preSte)}>
-        <Login/>
-      </Modal>
     </>
   );
 }
